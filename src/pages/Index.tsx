@@ -30,11 +30,11 @@ export default function Index() {
       <div
         key={i}
         style={{
-          width: '4px',
-          height: `${8 + i * 4}px`,
-          backgroundColor: i < strength ? '#3B82F6' : '#E5E7EB',
-          borderRadius: '2px',
-          marginRight: '2px'
+          width: '3px',
+          height: `${6 + i * 3}px`,
+          backgroundColor: i < strength ? '#A7C7E7' : '#F0F0F0',
+          borderRadius: '1px',
+          marginRight: '1px'
         }}
       />
     ));
@@ -53,7 +53,6 @@ export default function Index() {
   const handleConnect = async (network: WiFiNetwork, pass: string) => {
     setIsConnecting(true);
     
-    // Simulate connection
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     setSelectedNetwork(null);
@@ -71,69 +70,65 @@ export default function Index() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #F9FAFB 0%, #EBF4FF 100%)',
-      padding: '16px',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+      backgroundColor: '#F8F9FA',
+      padding: '20px',
+      fontFamily: 'Arial, sans-serif'
     }}>
       <div style={{
-        maxWidth: '400px',
+        maxWidth: '380px',
         margin: '0 auto',
-        paddingTop: '32px'
+        paddingTop: '20px'
       }}>
-        {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+        
+        <div style={{ textAlign: 'center', marginBottom: '30px' }}>
           <h1 style={{
-            fontSize: '32px',
-            fontWeight: 'bold',
-            color: '#111827',
+            fontSize: '24px',
+            fontWeight: 'normal',
+            color: '#4A4A4A',
             margin: '0 0 8px 0'
           }}>
             WiFi Networks
           </h1>
           <p style={{
-            color: '#6B7280',
+            color: '#7A7A7A',
             margin: '0',
-            fontSize: '16px'
+            fontSize: '14px'
           }}>
             Select a network to connect
           </p>
         </div>
 
-        {/* Device ID Section */}
         <div style={{
-          background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)',
-          borderRadius: '16px',
-          padding: '24px',
-          marginBottom: '32px',
-          boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
-          color: 'white'
+          backgroundColor: '#E8F4F8',
+          borderRadius: '8px',
+          padding: '20px',
+          marginBottom: '25px',
+          border: '1px solid #D6EBF0'
         }}>
-          <div style={{ marginBottom: '16px' }}>
+          <div style={{ marginBottom: '15px' }}>
             <h2 style={{
-              fontSize: '20px',
-              fontWeight: 'bold',
-              margin: '0 0 4px 0',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px'
+              fontSize: '16px',
+              fontWeight: 'normal',
+              margin: '0 0 5px 0',
+              color: '#5A5A5A'
             }}>
-              📱 Device Identification
+              Device Identification
             </h2>
             <p style={{
-              fontSize: '14px',
-              color: 'rgba(255, 255, 255, 0.8)',
+              fontSize: '12px',
+              color: '#8A8A8A',
               margin: '0'
             }}>
               Enter your device ID for network access
             </p>
           </div>
           
-          <div style={{ marginBottom: '16px' }}>
+          <div style={{ marginBottom: '15px' }}>
             <label style={{
               display: 'block',
-              fontSize: '14px',
-              fontWeight: '500',
-              marginBottom: '8px'
+              fontSize: '12px',
+              marginBottom: '5px',
+              color: '#6A6A6A'
             }}>
               Device ID
             </label>
@@ -144,60 +139,46 @@ export default function Index() {
               placeholder="Enter your device identifier"
               style={{
                 width: '100%',
-                padding: '12px',
-                borderRadius: '8px',
-                border: '2px solid rgba(255, 255, 255, 0.2)',
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                color: 'white',
-                fontSize: '16px',
+                padding: '10px',
+                borderRadius: '4px',
+                border: '1px solid #C8D8DC',
+                backgroundColor: 'white',
+                color: '#4A4A4A',
+                fontSize: '14px',
                 outline: 'none',
                 boxSizing: 'border-box'
-              }}
-              onFocus={(e) => {
-                e.target.style.borderColor = 'white';
-              }}
-              onBlur={(e) => {
-                e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
               }}
             />
           </div>
           
           <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '12px',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            borderRadius: '8px'
+            padding: '8px',
+            backgroundColor: '#D4F1E8',
+            borderRadius: '4px',
+            fontSize: '12px',
+            color: '#5A5A5A'
           }}>
-            <span>🛡️</span>
-            <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.9)' }}>
-              Secure device authentication enabled
-            </span>
+            Secure device authentication enabled
           </div>
         </div>
 
-        {/* Networks List */}
         <div style={{
           backgroundColor: 'white',
-          borderRadius: '16px',
-          padding: '24px',
-          marginBottom: '24px',
-          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+          borderRadius: '8px',
+          padding: '20px',
+          marginBottom: '20px',
+          border: '1px solid #E8E8E8'
         }}>
           <h3 style={{
-            fontSize: '18px',
-            fontWeight: '600',
-            margin: '0 0 16px 0',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            color: '#111827'
+            fontSize: '14px',
+            fontWeight: 'normal',
+            margin: '0 0 15px 0',
+            color: '#5A5A5A'
           }}>
-            📶 Available Networks
+            Available Networks
           </h3>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <div>
             {networks.map((network) => (
               <div
                 key={network.id}
@@ -206,51 +187,31 @@ export default function Index() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '16px',
-                  borderRadius: '12px',
-                  border: network.isConnected ? '2px solid #3B82F6' : '2px solid #E5E7EB',
-                  backgroundColor: network.isConnected ? '#EBF4FF' : 'white',
-                  cursor: network.isConnected ? 'default' : 'pointer',
-                  transition: 'all 0.2s ease'
-                }}
-                onMouseEnter={(e) => {
-                  if (!network.isConnected) {
-                    e.currentTarget.style.borderColor = '#D1D5DB';
-                    e.currentTarget.style.transform = 'translateY(-1px)';
-                    e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!network.isConnected) {
-                    e.currentTarget.style.borderColor = '#E5E7EB';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }
+                  padding: '12px',
+                  marginBottom: '8px',
+                  borderRadius: '6px',
+                  border: network.isConnected ? '1px solid #B8D4E3' : '1px solid #E8E8E8',
+                  backgroundColor: network.isConnected ? '#F0F8FB' : '#FAFAFA',
+                  cursor: network.isConnected ? 'default' : 'pointer'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <span style={{
-                    fontSize: '20px',
-                    color: network.isConnected ? '#3B82F6' : '#6B7280'
-                  }}>
-                    📶
-                  </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <div>
                     <div style={{
-                      fontWeight: '500',
-                      color: '#111827',
-                      fontSize: '16px'
+                      fontWeight: 'normal',
+                      color: '#4A4A4A',
+                      fontSize: '14px'
                     }}>
                       {network.name}
                     </div>
                     {network.isConnected && (
                       <span style={{
-                        fontSize: '12px',
-                        backgroundColor: '#E5E7EB',
-                        color: '#374151',
-                        padding: '2px 8px',
-                        borderRadius: '12px',
-                        marginTop: '4px',
+                        fontSize: '10px',
+                        backgroundColor: '#E0E0E0',
+                        color: '#6A6A6A',
+                        padding: '2px 6px',
+                        borderRadius: '8px',
+                        marginTop: '3px',
                         display: 'inline-block'
                       }}>
                         Connected
@@ -259,13 +220,13 @@ export default function Index() {
                   </div>
                 </div>
                 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ display: 'flex', alignItems: 'end', gap: '2px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'end', gap: '1px' }}>
                     {getSignalBars(network.signalStrength)}
                   </div>
                   
                   {network.isSecure && (
-                    <span style={{ fontSize: '16px', color: '#6B7280' }}>🔒</span>
+                    <span style={{ fontSize: '12px', color: '#8A8A8A' }}>🔒</span>
                   )}
                 </div>
               </div>
@@ -273,35 +234,29 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Password Input */}
         {selectedNetwork && selectedNetwork.isSecure && (
           <div style={{
             backgroundColor: 'white',
-            borderRadius: '16px',
-            padding: '24px',
-            boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-            animation: 'fadeIn 0.3s ease-out'
+            borderRadius: '8px',
+            padding: '20px',
+            border: '1px solid #E8E8E8'
           }}>
             <h3 style={{
-              fontSize: '18px',
-              fontWeight: '600',
-              margin: '0 0 16px 0',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              color: '#111827'
+              fontSize: '14px',
+              fontWeight: 'normal',
+              margin: '0 0 15px 0',
+              color: '#5A5A5A'
             }}>
-              🔑 Connect to {selectedNetwork.name}
+              Connect to {selectedNetwork.name}
             </h3>
             
             <form onSubmit={handleSubmit}>
-              <div style={{ marginBottom: '16px' }}>
+              <div style={{ marginBottom: '15px' }}>
                 <label style={{
                   display: 'block',
-                  fontSize: '14px',
-                  fontWeight: '500',
-                  marginBottom: '8px',
-                  color: '#374151'
+                  fontSize: '12px',
+                  marginBottom: '5px',
+                  color: '#6A6A6A'
                 }}>
                   Password
                 </label>
@@ -315,18 +270,13 @@ export default function Index() {
                     autoFocus
                     style={{
                       width: '100%',
-                      padding: '12px 40px 12px 12px',
-                      borderRadius: '8px',
-                      border: '2px solid #E5E7EB',
-                      fontSize: '16px',
+                      padding: '10px 35px 10px 10px',
+                      borderRadius: '4px',
+                      border: '1px solid #D8D8D8',
+                      fontSize: '14px',
                       outline: 'none',
-                      boxSizing: 'border-box'
-                    }}
-                    onFocus={(e) => {
-                      e.target.style.borderColor = '#3B82F6';
-                    }}
-                    onBlur={(e) => {
-                      e.target.style.borderColor = '#E5E7EB';
+                      boxSizing: 'border-box',
+                      backgroundColor: '#FAFAFA'
                     }}
                   />
                   <button
@@ -334,17 +284,17 @@ export default function Index() {
                     onClick={() => setShowPassword(!showPassword)}
                     style={{
                       position: 'absolute',
-                      right: '12px',
+                      right: '8px',
                       top: '50%',
                       transform: 'translateY(-50%)',
                       background: 'none',
                       border: 'none',
                       cursor: 'pointer',
-                      fontSize: '16px',
-                      color: '#6B7280'
+                      fontSize: '12px',
+                      color: '#8A8A8A'
                     }}
                   >
-                    {showPassword ? '🙈' : '👁️'}
+                    {showPassword ? 'hide' : 'show'}
                   </button>
                 </div>
               </div>
@@ -352,45 +302,36 @@ export default function Index() {
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '8px',
-                marginBottom: '20px'
+                gap: '6px',
+                marginBottom: '18px'
               }}>
                 <input
                   type="checkbox"
                   id="remember"
                   checked={rememberPassword}
                   onChange={(e) => setRememberPassword(e.target.checked)}
-                  style={{ marginRight: '4px' }}
                 />
                 <label htmlFor="remember" style={{
-                  fontSize: '14px',
-                  color: '#6B7280'
+                  fontSize: '12px',
+                  color: '#7A7A7A'
                 }}>
                   Remember this password
                 </label>
               </div>
 
-              <div style={{ display: 'flex', gap: '12px' }}>
+              <div style={{ display: 'flex', gap: '10px' }}>
                 <button
                   type="button"
                   onClick={() => setSelectedNetwork(null)}
                   style={{
                     flex: 1,
-                    padding: '12px',
-                    borderRadius: '8px',
-                    border: '2px solid #E5E7EB',
-                    backgroundColor: 'white',
-                    color: '#374151',
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#F9FAFB';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'white';
+                    padding: '10px',
+                    borderRadius: '4px',
+                    border: '1px solid #D8D8D8',
+                    backgroundColor: '#F5F5F5',
+                    color: '#6A6A6A',
+                    fontSize: '14px',
+                    cursor: 'pointer'
                   }}
                 >
                   Cancel
@@ -400,72 +341,34 @@ export default function Index() {
                   disabled={isConnecting || !password.trim()}
                   style={{
                     flex: 1,
-                    padding: '12px',
-                    borderRadius: '8px',
+                    padding: '10px',
+                    borderRadius: '4px',
                     border: 'none',
-                    backgroundColor: isConnecting || !password.trim() ? '#9CA3AF' : '#3B82F6',
-                    color: 'white',
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    cursor: isConnecting || !password.trim() ? 'not-allowed' : 'pointer',
-                    transition: 'all 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!isConnecting && password.trim()) {
-                      e.currentTarget.style.backgroundColor = '#2563EB';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!isConnecting && password.trim()) {
-                      e.currentTarget.style.backgroundColor = '#3B82F6';
-                    }
+                    backgroundColor: isConnecting || !password.trim() ? '#E0E0E0' : '#C8E6C9',
+                    color: isConnecting || !password.trim() ? '#A0A0A0' : '#4A4A4A',
+                    fontSize: '14px',
+                    cursor: isConnecting || !password.trim() ? 'not-allowed' : 'pointer'
                   }}
                 >
-                  {isConnecting ? '🔄 Connecting...' : 'Connect'}
+                  {isConnecting ? 'Connecting...' : 'Connect'}
                 </button>
               </div>
             </form>
           </div>
         )}
 
-        {/* Info Card */}
         <div style={{
-          marginTop: '24px',
-          background: 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)',
-          borderRadius: '16px',
-          padding: '16px',
-          color: 'white'
+          marginTop: '20px',
+          backgroundColor: '#F0F4F8',
+          borderRadius: '6px',
+          padding: '12px',
+          border: '1px solid #E0E8ED'
         }}>
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-            <span style={{ fontSize: '20px', marginTop: '2px' }}>ℹ️</span>
-            <div style={{ fontSize: '14px' }}>
-              <p style={{ fontWeight: '500', margin: '0 0 4px 0' }}>
-                Secure Connection
-              </p>
-              <p style={{
-                color: 'rgba(255, 255, 255, 0.8)',
-                margin: '0',
-                lineHeight: '1.4'
-              }}>
-                Your saved passwords are encrypted and stored locally for quick reconnection.
-              </p>
-            </div>
+          <div style={{ fontSize: '12px', color: '#6A6A6A', lineHeight: '1.4' }}>
+            <strong>Secure Connection:</strong> Your saved passwords are stored locally for quick reconnection.
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 }

@@ -365,8 +365,7 @@ export default function Index() {
           border: '1px solid #E0E8ED'
         }}>
           <div style={{ fontSize: '12px', color: '#6A6A6A', lineHeight: '1.4' }}>
-            <strong>Secure Connection:</strong> Your saved passwords are stored locally for quick reconnection.
-          </div>
+</div>
         </div>
       </div>
     </div>

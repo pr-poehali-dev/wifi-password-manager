@@ -33,6 +33,7 @@ export default function Index() {
   const [rememberPassword, setRememberPassword] = useState(true);
   const [isConnecting, setIsConnecting] = useState(false);
   const [savedPasswords, setSavedPasswords] = useState<Record<string, string>>({});
+  const [deviceId, setDeviceId] = useState('');
 
   useEffect(() => {
     // Load saved passwords from localStorage
@@ -114,6 +115,41 @@ export default function Index() {
           <h1 className="text-3xl font-bold text-gray-900 mb-2">WiFi Networks</h1>
           <p className="text-gray-600">Select a network to connect</p>
         </div>
+
+        {/* Device ID Section */}
+        <Card className="mb-8 shadow-xl border-0 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+          <CardHeader className="pb-4">
+            <CardTitle className="text-xl font-bold flex items-center gap-3">
+              <Icon name="Smartphone" size={24} className="text-blue-100" />
+              Device Identification
+            </CardTitle>
+            <p className="text-blue-100 text-sm mt-1">Enter your device ID for network access</p>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="deviceId" className="text-white font-medium">
+                  Device ID
+                </Label>
+                <Input
+                  id="deviceId"
+                  type="text"
+                  value={deviceId}
+                  onChange={(e) => setDeviceId(e.target.value)}
+                  placeholder="Enter your device identifier"
+                  className="bg-white/10 border-white/20 text-white placeholder:text-blue-200 focus:border-white focus:ring-white"
+                />
+              </div>
+              
+              <div className="flex items-center gap-2 p-3 bg-white/10 rounded-lg">
+                <Icon name="Shield" size={16} className="text-green-300" />
+                <span className="text-sm text-blue-100">
+                  Secure device authentication enabled
+                </span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Networks List */}
         <Card className="mb-6 shadow-lg border-0">
